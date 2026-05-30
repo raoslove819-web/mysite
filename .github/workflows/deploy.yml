@@ -22,4 +22,5 @@ jobs:
           script: |
             cd /home/deploy/mysite
             git pull origin main
+            docker-compose down --remove-orphans
             docker-compose up -d --build
