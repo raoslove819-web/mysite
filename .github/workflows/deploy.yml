@@ -1,0 +1,25 @@
+# CI/CD 自动部署流水线
+# 每次 push 代码到 main 分支，自动部署到阿里云 ECS
+name: 自动部署到阿里云
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 步骤1：SSH 连上服务器，拉代码 + 重建容器
+      - name: 远程部署
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          script: |
+            cd /home/deploy/mysite
+            git pull origin main
+            docker-compose up -d --build
