@@ -20,14 +20,14 @@ NOTES = [
      "desc": "Pod/Service/Ingress、Deployment 滚动更新、ConfigMap"},
     {"title": "Prometheus + Grafana 监控", "date": "2026-06", "status": "待学习",
      "desc": "指标采集、告警规则、Grafana Dashboard 可视化"},
-    {"title": "CI/CD 流水线", "date": "2026-07", "status": "待学习",
-     "desc": "GitLab CI、GitHub Actions、自动构建部署"},
+    {"title": "CI/CD 自动部署", "date": "2026-05", "status": "已完成",
+     "desc": "GitHub Actions 自动部署流水线，代码 push → 服务器自动更新"},
     {"title": "TCP/IP 网络原理", "date": "2026-04", "status": "已完成",
      "desc": "DNS 解析、HTTP/HTTPS、抓包分析、网络排障"},
 ]
 
 SKILLS = ["Linux", "Docker", "Nginx", "Shell", "Python", "Git",
-          "阿里云", "Prometheus", "Kubernetes(学习中)", "CI/CD(学习中)"]
+          "阿里云", "Prometheus", "Kubernetes(学习中)", "CI/CD(GitHub Actions)"]
 
 
 @app.route("/")
