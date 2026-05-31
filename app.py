@@ -4,8 +4,10 @@ raos 的运维笔记 - 个人站点
 """
 from flask import Flask, render_template
 from datetime import datetime
+from prometheus_flask_exporter import PrometheusMetrics
 
 app = Flask(__name__)
+metrics = PrometheusMetrics(app)
 
 NOTES = [
     {"title": "Docker 容器化实战", "date": "2026-05", "status": "学习中",
@@ -18,8 +20,8 @@ NOTES = [
      "desc": "安全组、快照、监控告警、Terraform 基础设施即代码"},
     {"title": "Kubernetes 入门", "date": "2026-06", "status": "待学习",
      "desc": "Pod/Service/Ingress、Deployment 滚动更新、ConfigMap"},
-    {"title": "Prometheus + Grafana 监控", "date": "2026-06", "status": "待学习",
-     "desc": "指标采集、告警规则、Grafana Dashboard 可视化"},
+    {"title": "Prometheus + Grafana 监控", "date": "2026-05", "status": "已部署",
+     "desc": "Prometheus 采集 + Grafana 面板，QPS/延迟/错误率实时监控"},
     {"title": "CI/CD 自动部署", "date": "2026-05", "status": "已完成",
      "desc": "GitHub Actions 自动部署流水线，代码 push → 服务器自动更新"},
     {"title": "TCP/IP 网络原理", "date": "2026-04", "status": "已完成",
